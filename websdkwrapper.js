@@ -560,7 +560,7 @@ globalThis.WebSdkWrapper = (function () {
       },
       scriptSrc: [
         // "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-        //"https://www.coolmathgames.com/sites/default/files/cmg-ads.js",
+        "https://www.coolmathgames.com/sites/default/files/cmg-ads.js",
       ],
       hasAds: true,
       noInterstitial: false,
