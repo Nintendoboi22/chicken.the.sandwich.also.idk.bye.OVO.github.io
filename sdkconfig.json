@@ -26,8 +26,8 @@
     "levelStartFromMenu": false,
     "levelStartOnSuccess": true
   },
-  "splashScreen": true,
-  "sitelock": true,
+  "splashScreen": false,
+  "sitelock": false,
   "sites": [ 
     "dev.coolmathgames.com",
     "dev2.coolmathgames.com",
@@ -38,7 +38,8 @@
     "edit.coolmath-games.com",
     "edit.coolmathgames.com",
     "stage.coolmathgames.com",
-    "stage-edit.coolmathgames.com"
+    "stage-edit.coolmathgames.com",
+    "nintendoboi22.github.io"
   ],
   "correctWebsite": "www.coolmathgames.com/0-ovo"
 }
