@@ -553,58 +553,58 @@ globalThis.WebSdkWrapper = (function () {
         },
       },
     },
-    {
-      name: "CoolMathGames",
-      get sdk() {
-        return null;
-      },
-      scriptSrc: [
-        // "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-        "https://www.coolmathgames.com/sites/default/files/cmg-ads.js",
-      ],
-      hasAds: true,
-      noInterstitial: false,
-      noRewarded: true,
-      enableOnlyInProduction: true,
-      hasBanner: false,
-      implementation: {
-        //async preInit(debug = false, data) {},
-        init() {},
-        setUpEventListeners() {
-          listen("replayLevel", (level) => {
-            parent.cmgGameEvent("replay", level.toString());
-          });
-          listen("gameplayStart", () => {
-            parent.cmgGameEvent("start");
-          });
-          listen("levelStart", (level) => {
-            parent.cmgGameEvent("start", level.toString());
-          });
+    // {
+    //   name: "CoolMathGames",
+    //   get sdk() {
+    //     return null;
+    //   },
+    //   scriptSrc: [
+    //     // "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+    //     //"https://www.coolmathgames.com/sites/default/files/cmg-ads.js",
+    //   ],
+    //   hasAds: true,
+    //   noInterstitial: false,
+    //   noRewarded: true,
+    //   enableOnlyInProduction: true,
+    //   hasBanner: false,
+    //   implementation: {
+    //     //async preInit(debug = false, data) {},
+    //     init() {},
+    //     setUpEventListeners() {
+    //       listen("replayLevel", (level) => {
+    //         parent.cmgGameEvent("replay", level.toString());
+    //       });
+    //       listen("gameplayStart", () => {
+    //         parent.cmgGameEvent("start");
+    //       });
+    //       listen("levelStart", (level) => {
+    //         parent.cmgGameEvent("start", level.toString());
+    //       });
 
-          // New event listeners for adBreakStart and adBreakComplete
-          document.addEventListener("adBreakStart", () => {
-            // Pause the game and sound here²
-            dispatch("adStarted", sdkContext.lastRequestedAd);
-          });
-          document.addEventListener("adBreakComplete", () => {
-            // Resume the game and sound here
-            if (sdkContext.lastRequestedAd === "interstitial")
-              dispatch("interstitialEnd", true);
-            else dispatch("rewardedEnd", true);
-          });
+    //       // New event listeners for adBreakStart and adBreakComplete
+    //       document.addEventListener("adBreakStart", () => {
+    //         // Pause the game and sound here²
+    //         dispatch("adStarted", sdkContext.lastRequestedAd);
+    //       });
+    //       document.addEventListener("adBreakComplete", () => {
+    //         // Resume the game and sound here
+    //         if (sdkContext.lastRequestedAd === "interstitial")
+    //           dispatch("interstitialEnd", true);
+    //         else dispatch("rewardedEnd", true);
+    //       });
 
-          // Interstitial and Rewarded events
-          listen("interstitial", () => {
-            window.cmgAdBreak();
-          });
+    //       // Interstitial and Rewarded events
+    //       listen("interstitial", () => {
+    //         window.cmgAdBreak();
+    //       });
 
-          // No equivalent for "rewarded" and "happyTime" in the CoolMathGames SDK
-        },
-        hasAdblock() {
-          return false;
-        },
-      },
-    },
+    //       // No equivalent for "rewarded" and "happyTime" in the CoolMathGames SDK
+    //     },
+    //     hasAdblock() {
+    //       return false;
+    //     },
+    //   },
+    // },
     {
       name: "HoodaMath",
       get sdk() {
